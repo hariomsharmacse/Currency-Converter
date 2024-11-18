@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Currency Converter</h1>
+      <div class="enterAmount">
+        <input type="number" required id="inputData" />
+        <label for="">Enter Amount</label>
+      </div>
+
+      <div class="selectors">
+        <div class="from">
+          <p>From</p>
+          <div class="image">
+            <img src="" alt="" id="fromImg" />
+            <select id="curFrom" class="sel">
+              <option value="">Select</option>
+              <!-- <option value="USD">USD</option> -->
+            </select>
+          </div>
+        </div>
+        <i id="icon" class="fa-solid fa-arrow-right-arrow-left"></i>
+        <div class="to">
+          <p>To</p>
+          <div class="image">
+            <img src="" alt="" id="toImg" />
+            <select id="curTo" class="sel">
+              <option value="">Select</option>
+              <!-- <option value="USD">USD</option> -->
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="output"></div>
+      <button id="btn">Get Exchange Rate</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
