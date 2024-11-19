@@ -10,13 +10,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: url("background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .main {
@@ -26,6 +22,8 @@ body {
   /* height: 350px; */
   border-radius: 12px;
   color: white;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.432);
 }
 
 h1 {
@@ -138,4 +136,14 @@ input:valid ~ label {
 
 #btn:active {
   background-color: green;
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 98%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
 }
