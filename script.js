@@ -199,20 +199,19 @@ fromSelect.addEventListener("change", (e) => {
 });
 
 async function getDataFromApi() {
+  outputData.innerText = "Loading...";
   let url = await fetch(exchangeApi);
   let urlData = await url.json();
-  if (fromvalImage != undefined && tovalImage != undefined) {
-    let strDatafrom = fromvalImage.toLowerCase();
-    let objData = urlData[strDatafrom];
-    let finalOutput = (
-      objData[tovalImage.toLowerCase()] * inputData.value
-    ).toFixed(2);
-    outputData.innerText = `${inputData.value} ${fromvalImage} = ${finalOutput} ${tovalImage}`;
 
-    console.log(
-      (objData[tovalImage.toLowerCase()] * inputData.value).toFixed(2)
-    );
-  }
+  let strDatafrom = fromvalImage.toLowerCase();
+  let objData = urlData[strDatafrom];
+  let finalOutput = (
+    objData[tovalImage.toLowerCase()] * inputData.value
+  ).toFixed(2);
+  outputData.innerText = `${inputData.value} ${fromvalImage} = ${finalOutput} ${tovalImage}`;
+
+  // console.log((objData[tovalImage.toLowerCase()] * inputData.value).toFixed(2));
+  console.log(exchangeApi);
 }
 
 toSelect.addEventListener("change", (e) => {
