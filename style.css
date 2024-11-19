@@ -140,7 +140,7 @@ input:valid ~ label {
 
 @media (max-width: 600px) {
   body {
-    height: 97vh;
+    height: 94vh;
   }
   .main {
     width: 98%;
