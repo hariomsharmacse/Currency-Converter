@@ -172,6 +172,9 @@ let exchangeApi =
 let fromvalImage;
 let tovalImage;
 
+let inputData1 = false;
+let inputData2 = false;
+
 let todayDate = new Date();
 let fullDate = `${todayDate.getFullYear()}-${
   todayDate.getMonth() + 1
@@ -193,13 +196,21 @@ fromSelect.addEventListener("change", (e) => {
   fromvalImage = e.target.value;
   // console.log(valImage);
   // console.log(typeof val);
+
   imageFrom.src = `https://flagsapi.com/${currencyCountryCodes[fromvalImage]}/flat/64.png`;
   exchangeApi = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${fullDate}/v1/currencies/${fromvalImage.toLowerCase()}.json`;
   // console.log(exchangeApi);
+  console.log(fromvalImage);
+  if (fromvalImage != "") {
+    inputData1 = true;
+  } else {
+    inputData1 = false;
+  }
 });
 
 async function getDataFromApi() {
   outputData.innerText = "Loading...";
+
   let url = await fetch(exchangeApi);
   let urlData = await url.json();
 
@@ -216,13 +227,25 @@ async function getDataFromApi() {
 
 toSelect.addEventListener("change", (e) => {
   tovalImage = e.target.value;
+
   imageTo.src = `https://flagsapi.com/${currencyCountryCodes[tovalImage]}/flat/64.png`;
+  if (tovalImage != "") {
+    inputData2 = true;
+  } else {
+    inputData2 = false;
+  }
 });
 
 submitBtn.addEventListener("click", () => {
   if (inputData.value != "") {
-    outputData.style.visibility = "visible";
-    getDataFromApi();
+    if (inputData1 && inputData2) {
+      outputData.style.visibility = "visible";
+      getDataFromApi();
+    } else if (inputData1 && inputData2 == false) {
+      alert('Please select country "To" data');
+    } else {
+      alert('Please select country "From" data');
+    }
   } else {
     alert("please enter amount");
   }

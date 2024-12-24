@@ -101,6 +101,7 @@ select:focus {
   left: 8px;
   transform: translateY(-50%);
   transition: 0.5s;
+  color: rgb(190, 187, 187);
 }
 
 input:focus ~ label,
