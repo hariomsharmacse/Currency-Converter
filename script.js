@@ -73,7 +73,7 @@ const currencyCountryCodes = {
   KES: "KE", // Kenya - Kenyan Shilling
   KGS: "KG", // Kyrgyzstan - Kyrgyzstani Som
   KHR: "KH", // Cambodia - Cambodian Riel
-  KID: "KI", // Kiribati - Kiribati Dollar
+  // KID: "KI", // Kiribati - Kiribati Dollar
   KMF: "KM", // Comoros - Comorian Franc
   KRW: "KR", // South Korea - South Korean Won
   KWD: "KW", // Kuwait - Kuwaiti Dinar
