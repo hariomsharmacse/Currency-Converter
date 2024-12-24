@@ -205,11 +205,14 @@ fromSelect.addEventListener("change", (e) => {
     inputData1 = true;
   } else {
     inputData1 = false;
+    outputData.style.visibility = "hidden";
   }
 });
 
 async function getDataFromApi() {
-  outputData.innerText = "Loading...";
+  // outputData.style.display = "block";
+  outputData.style.visibility = "visible";
+  outputData.innerHTML = "<div class='loader'></div>";
 
   let url = await fetch(exchangeApi);
   let urlData = await url.json();
@@ -233,20 +236,23 @@ toSelect.addEventListener("change", (e) => {
     inputData2 = true;
   } else {
     inputData2 = false;
+    outputData.style.visibility = "hidden";
   }
 });
 
 submitBtn.addEventListener("click", () => {
   if (inputData.value != "") {
     if (inputData1 && inputData2) {
-      outputData.style.visibility = "visible";
       getDataFromApi();
     } else if (inputData1 && inputData2 == false) {
+      outputData.style.display = "none";
       alert('Please select country "To" data');
     } else {
+      outputData.style.visibility = "hidden";
       alert('Please select country "From" data');
     }
   } else {
+    outputData.style.visibility = "hidden";
     alert("please enter amount");
   }
 });
