@@ -176,9 +176,11 @@ let inputData1 = false;
 let inputData2 = false;
 
 let todayDate = new Date();
-let fullDate = `${todayDate.getFullYear()}-${
-  todayDate.getMonth() + 1
-}-${todayDate.getDate()}`;
+// let fullDate = `${todayDate.getFullYear()}-${
+//   todayDate.getMonth() + 1
+// }-${todayDate.getDate()}`;
+
+let fullDate = "2024-12-31";
 
 // console.log(exchangeApi);
 
@@ -213,9 +215,11 @@ async function getDataFromApi() {
   // outputData.style.display = "block";
   outputData.style.visibility = "visible";
   outputData.innerHTML = "<div class='loader'></div>";
+  // console.log(exchangeApi);
 
   let url = await fetch(exchangeApi);
   let urlData = await url.json();
+  // console.log(urlData);
 
   let strDatafrom = fromvalImage.toLowerCase();
   let objData = urlData[strDatafrom];
